@@ -1,0 +1,98 @@
+<form tabindex="-1" role="dialog"
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)">
+
+    <fieldset>
+        <div role="document">
+            <div >
+                <div>
+                    <p>Report #{{pig.report_id}}</p>
+                    <h1>Pig {{pig.pID}}'s Pig Report</h1>
+                </div>
+                <div class="form-container">
+                    <section class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Name</label>
+                        <section class="col-sm-9">
+                            {{pig.name}}
+
+                        </section>
+                    </section>
+
+                    <section class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Phone</label>
+                            <section class="col-sm-9">
+                                {{pig.phone}}
+                         </section>
+                    </section>
+
+                    <section class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Breed</label>
+                            <section class="col-sm-9">
+                                {{pig.breed}}
+                         </section>
+                    </section>
+
+                    <section class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Pig ID</label>
+                            <section class="col-sm-9">
+                                {{pig.pID}}
+                         </section>
+                    </section>
+
+                    <section class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Location</label>
+                        <section class="col-sm-9">
+                            {{pig.location}}
+                        </section>
+                    </section>
+                    
+                    
+                        <section class="form-group row">
+                            <label for="name" class="col-sm-3 col-form-label">Longitude</label>
+                                <section class="col-sm-9">
+                                {{pig.longitude}}
+                             </section>
+                        </section>
+
+                        <section class="form-group row">
+                            <label for="name" class="col-sm-3 col-form-label">Latitude</label>
+                            <section class="col-sm-9">
+
+                                {{pig.latitude}}
+                            </section>
+                        </section>
+                    
+
+                    <section class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Extra Notes</label>
+                            <section class="col-sm-9">
+                                <input type="text" name="extra" class="form-control" id="extra" placeholder="Extra" value="" formControlName="extra">
+                            
+                                <!-- {{pig.extra}} -->
+                         </section>
+                    </section>
+
+                    <section class="form-group row">
+                        <label for="category" class="col-sm-3 col-form-label">Status</label>
+                            <section class="col-sm-9">
+                                <select class="form-select" aria-label="Default select example" id="status" formControlName="status" required>
+                                    <option value="READY FOR PICKUP" selected>READY FOR PICKUP</option>
+                                    <option value="RETRIEVED">RETRIEVED</option>
+
+                                </select>
+                            </section>
+                    </section>
+                
+                </div> 
+                <button type="submit" class="btn btn-outline-success" [disabled]="!form.valid">UPDATE PIG REPORT</button>
+                <button type="button" (click) = "returnToMain()" class="btn btn-outline-danger" >CANCEL</button>
+            </div> 
+        
+        
+        </div>
+
+        
+        
+    </fieldset>        
+
+</form>

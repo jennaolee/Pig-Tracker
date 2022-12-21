@@ -1,0 +1,12 @@
+
+<tr> 
+  <button 
+  class="btn btn-outline-danger"
+  id="delete"
+  (click)="onDelete($event,pig.report_id)"
+  >DELETE</button>
+
+  <button class="btn btn-outline-primary"
+  (click)="onEdit(pig.name, pig.phone, pig.breed, pig.pID, pig.location, pig.longitude, pig.latitude, pig.extra, pig.date_time, pig.status, pig.report_id)"
+  >EDIT</button>
+</tr> 

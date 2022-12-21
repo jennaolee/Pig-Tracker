@@ -1,0 +1,54 @@
+
+<section class="pipe">
+   SEARCH: <input type="text" [(ngModel)]="query"> 
+</section>
+<p class="pipe">Number of pigs: {{ pigs | search:query | countPigs }}</p>
+<section class="margin"></section>
+<app-map></app-map>
+
+<table class="table table-bordered table-striped table-hover" >
+    <thead>
+    <tr>
+        <th>Location <button class="sortBtn" (click)="sortByLocation()">sort</button></th>
+        <th>Reported By <button class="sortBtn" (click)="sortByName()">sort</button></th>
+        <th>Time Reported <button class="sortBtn" (click)="sortByTime()">sort</button></th>
+        <th>Status <button class="sortBtn" (click)="sortByStatus()">sort</button></th>
+        <th>More Info</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr 
+    *ngFor="let p of pigs"
+    >
+        <td>{{ p.location }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{p.date_time | date: 'dd-MM-yyyy (h:mm a)'}}</td>
+        <td>{{ p.status }}</td>
+        <td>
+            <app-pig-info
+                [pig]="p"
+            ></app-pig-info>
+        </td>
+        <td>
+            <app-pig
+        
+            [pig]="p"
+            (delete) = "onPersonDelete($event)"
+            ></app-pig>
+
+        </td>
+
+    </tr>
+    
+    </tbody>
+
+</table>
+
+<button (click)="onCreatePigOpen()" class="create-report">CREATE PIG REPORT</button>
+
+
+
+
+            

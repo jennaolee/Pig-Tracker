@@ -1,0 +1,101 @@
+<form class="modal" tabindex="-1" role="dialog"
+
+[ngStyle]="{'display':displayStyle}">
+
+    <fieldset>
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title">Pig Report #{{pig.report_id}}</h4>
+            </div>
+            <div class="modal-body form-container">
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label name">Name</label>
+                    <section class="col-sm-9">
+                        {{pig.name}}
+                    </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label phone">Phone</label>
+                    <section class="col-sm-9">
+                        {{pig.phone}}
+                    </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label breed">Breed</label>
+                    <section class="col-sm-9">
+                        {{pig.breed}}
+                    </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label pID">Pig ID</label>
+                    <section class="col-sm-9">
+                        {{pig.pID}}
+                    </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label location">Location</label>
+                <section class="col-sm-9">
+                    {{pig.location}}
+                </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label longitude">Longitude</label>
+                <section class="col-sm-9">
+                    {{pig.longitude}}
+                </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label latitude">Latitude</label>
+                <section class="col-sm-9">
+                    {{pig.latitude}}
+                </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label extra">Extra Notes</label>
+                    <section class="col-sm-9">
+                        {{pig.extra}}
+                    </section>
+            </section>
+            
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label pID">Date/Time</label>
+                    <section class="col-sm-9">
+                        {{pig.date_time | date: 'dd-MM-yyyy (h:mm a)'}}
+                    </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label pID">Status</label>
+                    <section class="col-sm-9">
+                        {{pig.status}}
+                    </section>
+            </section>
+            </div> 
+            <div class="modal-footer">
+        
+            <button type="button" class="btn btn-danger" (click)="closePopup()">Close</button>
+            </div>
+        </div> 
+        
+        </div>
+   
+    </fieldset>        
+
+</form>
+
+<tr>
+    <td><button 
+        class="btn btn-outline-secondary"
+      id="delete"
+      (click)="openPopup($event,pig.name, pig.phone, pig.breed, pig.pId, pig.location, pig.longitude, pig.latitude, pig.extra, pig.report_id)"
+      >More Info</button>
+    </td>
+</tr>
